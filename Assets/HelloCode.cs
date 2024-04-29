@@ -20,11 +20,27 @@ public class HelloCode : MonoBehaviour
         Debug.Log("나이: " +  age);
         Debug.Log("키: " + height);
         Debug.Log("여성인가?: " + isFemale);
+
+        // 두 점 사이의 거리 구하기 함수 출력
+        float distance = GetDistance(2, 2, 5, 6);
+        Debug.Log("(2, 2)에서 (5, 6)까지의 거리: " + distance);
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    // 두 점 사이의 거리 구하기 함수
+    float GetDistance(float x1, float y1, float x2, float y2)
+    {
+        float width = x2 - x1;
+        float height = y2 - y1;
+
+        float distance = width * width + height * height;
+        distance = Mathf.Sqrt(distance);
+
+        return distance;
     }
 }
