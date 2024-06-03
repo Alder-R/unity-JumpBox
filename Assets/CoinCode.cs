@@ -9,7 +9,7 @@ public class CoinCode : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        // Tag°¡ "" ÀÏ ¶§
+        // Tagê°€ "" ì¼ ë•Œ
         if (col.gameObject.tag == "Player")
         {
             // Deactive Item

@@ -53,7 +53,7 @@ public class Move : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && !isJumping)
         {
             rigid.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
-            isJumping = true; //Á¡ÇÁÇÏ¸é isJumpingÀ» true·Î
+            isJumping = true; //ì í”„í•˜ë©´ isJumpingì„ trueë¡œ
         }
     }
     void TurnBrake()
@@ -65,15 +65,15 @@ public class Move : MonoBehaviour
     }
     void OnCollisionEnter(Collision playerCol)
     {
-        // ºÎµúÈù ¹°Ã¼ÀÇ ÅÂ±×°¡ "Ground"¶ó¸é
+        // ë¶€ë”ªíŒ ë¬¼ì²´ì˜ íƒœê·¸ê°€ "Ground"ë¼ë©´
         if (playerCol.gameObject.CompareTag("Ground"))
         {
-            isJumping = false; //isJumpingÀ» ´Ù½Ã false·Î
+            isJumping = false; //isJumpingì„ ë‹¤ì‹œ falseë¡œ
         }
 
-        if (playerCol.gameObject.CompareTag("RePlacer")) // "RePlacer" ÅÂ±×¿¡ ´êÀ¸¸é
+        if (playerCol.gameObject.CompareTag("RePlacer")) // "RePlacer" íƒœê·¸ì— ë‹¿ìœ¼ë©´
         {
-            transform.position = new Vector3(-100, 3, 0); // Ã³À½ À§Ä¡·Î
+            transform.position = new Vector3(-100, 3, 0); // ì²˜ìŒ ìœ„ì¹˜ë¡œ
         }
     }
 

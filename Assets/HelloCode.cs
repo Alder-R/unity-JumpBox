@@ -2,28 +2,47 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HelloCode : MonoBehaviour
+public class HelloCode : MonoBehaviour      // êµìž¬ ì˜ˆì œ ëª¨ìŒ
 {
     // Start is called before the first frame update
     void Start()
     {
-        // Ä³¸¯ÅÍÀÇ ÇÁ·ÎÇÊÀ» º¯¼ö·Î ¸¸µé±â
-        string characterName = "¶ó¶ó";
+        // ìºë¦­í„°ì˜ í”„ë¡œí•„ì„ ë³€ìˆ˜ë¡œ ë§Œë“¤ê¸°
+        string characterName = "ë¼ë¼";
         char bloodType = 'A';
         int age = 17;
         float height = 168.3f;
         bool isFemale = true;
+        // ìƒì„±í•œ ë³€ìˆ˜ë¥¼ ì½˜ì†”ì— ì¶œë ¥
+        Debug.Log("ìºë¦­í„° ì´ë¦„: " + characterName);
+        Debug.Log("í˜ˆì•¡í˜•: " + bloodType);
+        Debug.Log("ë‚˜ì´: " +  age);
+        Debug.Log("í‚¤: " + height);
+        Debug.Log("ì—¬ì„±ì¸ê°€?: " + isFemale);
 
-        // »ý¼ºÇÑ º¯¼ö¸¦ ÄÜ¼Ö¿¡ Ãâ·Â
-        Debug.Log("Ä³¸¯ÅÍ ÀÌ¸§: " + characterName);
-        Debug.Log("Ç÷¾×Çü: " + bloodType);
-        Debug.Log("³ªÀÌ: " +  age);
-        Debug.Log("Å°: " + height);
-        Debug.Log("¿©¼ºÀÎ°¡?: " + isFemale);
-
-        // µÎ Á¡ »çÀÌÀÇ °Å¸® ±¸ÇÏ±â ÇÔ¼ö Ãâ·Â
+        // ë‘ ì  ì‚¬ì´ì˜ ê±°ë¦¬ êµ¬í•˜ê¸° í•¨ìˆ˜ ì¶œë ¥
         float distance = GetDistance(2, 2, 5, 6);
-        Debug.Log("(2, 2)¿¡¼­ (5, 6)±îÁöÀÇ °Å¸®: " + distance);
+        Debug.Log("(2, 2)ì—ì„œ (5, 6)ê¹Œì§€ì˜ ê±°ë¦¬: " + distance);
+
+        // í…ŒìŠ¤íŠ¸1
+        float h = 24.923f, w = 12.054f, j = 27.298f;
+        int s1, s2;
+        s1 = (h > w) ? 20 : 50;
+        s2 = (s1 < j) ? 70 : 90;
+        Debug.Log("s2ì˜ ê²°ê³¼ëŠ” " + s2);
+
+        // ì œì–´ë¬¸ ì˜ˆì œë“¤
+        // if, if else, else
+        MiYeanSi(100);
+        MiYeanSi(80);
+        MiYeanSi(50);
+        // &&, ||, !
+        // for, while
+
+        // ë°°ì—´ ì˜ˆì œ
+        int[] students = new int[5];
+        students[0] = 100; students[1] = 90; students[2] = 80; students[3] = 70; students[4] = 60;
+        for (int i = 0; i < 5; i++) Debug.Log($"{i}ë²ˆ í•™ìƒì˜ ì ìˆ˜: {students[i]}");
     }
 
     // Update is called once per frame
@@ -32,7 +51,7 @@ public class HelloCode : MonoBehaviour
         
     }
 
-    // µÎ Á¡ »çÀÌÀÇ °Å¸® ±¸ÇÏ±â ÇÔ¼ö
+    // ë‘ ì  ì‚¬ì´ì˜ ê±°ë¦¬ êµ¬í•˜ê¸° í•¨ìˆ˜
     float GetDistance(float x1, float y1, float x2, float y2)
     {
         float width = x2 - x1;
@@ -42,5 +61,12 @@ public class HelloCode : MonoBehaviour
         distance = Mathf.Sqrt(distance);
 
         return distance;
+    }
+
+    void MiYeanSi(int love)
+    {
+        if (90 < love) Debug.Log($"í˜¸ê°ë„: {love}, íŠ¸ë£¨ì—”ë”©");
+        else if (70 < love) Debug.Log($"í˜¸ê°ë„: {love}, êµ¿ì—”ë”©");
+        else Debug.Log($"í˜¸ê°ë„: {love}, ë°°ë“œì—”ë”©");
     }
 }
