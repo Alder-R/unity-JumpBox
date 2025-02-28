@@ -1,4 +1,4 @@
-# JumpBox
+# Jump Box
  유니티3D 프로젝트 - 점프 박스 (+수업 내용 일부) <br><br>
 
 
